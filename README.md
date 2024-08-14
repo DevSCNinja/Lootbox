@@ -10,7 +10,7 @@ Functionality: Mint NFTs, manage ownership, and support trades/burn.
 ERC721 Standard: Follow ERC721 standard for NFT implementation, which ensures compatibility with existing wallets and marketplaces.<br/>
 
 
-2. ### Backend and Database Management <br/>
+### 2. Backend and Database Management <br/>
 
 a. Database for Cosmetics:<br/>
 Store cosmetics details such as rarity, total supply, attributes, etc., in a centralized database (e.g., PostgreSQL).
@@ -21,7 +21,7 @@ Manage user interactions, handle loot box opening requests, and query cosmetics 
 Serve metadata for cosmetic NFTs (JSON files detailing item attributes, images).
 
 
-3. ### User Interface and Experience <br/>
+### 3. User Interface and Experience <br/>
 a. Instantaneous UX:<br/>
 Implement asynchronous calls with loading indicators to provide real-time feedback while interacting with the blockchain.
 Use Web3.js or Ethers.js to connect the frontend to the blockchain and handle wallet operations.<br/>
