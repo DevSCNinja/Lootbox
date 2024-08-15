@@ -1,0 +1,70 @@
+use solana_program::{
+    account_info::{next_account_info, AccountInfo},
+    entrypoint,
+    entrypoint::ProgramResult,
+    pubkey::Pubkey,
+    msg,
+};
+
+// Program entry point
+entrypoint!(process_instruction);
+
+// Main processing function
+fn process_instruction(
+    program_id: &Pubkey,
+    accounts: &[AccountInfo],
+    instruction_data: &[u8],
+) -> ProgramResult {
+    // Parse the instruction data and handle logic for various operations like
+    // openLootBox, mintCosmeticItem, equipItem, unequipItem
+    Ok(())
+}
+
+// Function to open loot box and select item based on rarity
+fn open_loot_box() -> Result<SelectedCosmetic, ProgramError> {
+    // Utilize Chainlink VRF
+    let random_number = get_chainlink_vrf();
+    
+    // Lookup item based on rarity
+    let selected_item = lookup_rarity(random_number);
+    
+    // Decrement supply count
+    update_supply_count(selected_item)?;
+    
+    Ok(selected_item)
+}
+
+// Helper function to mint NFT
+fn mint_cosmetic_nft(user_pubkey: &Pubkey, selected_item: &SelectedCosmetic) -> ProgramResult {
+    // Implement minting logic here
+    Ok(())
+}
+
+// Function to update supply count
+fn update_supply_count(selected_item: &SelectedCosmetic) -> ProgramResult {
+    // Modify the state to decrement the count
+    Ok(())
+}
+
+// Function to equip item to base character NFT
+fn equip_item(user_pubkey: &Pubkey, item_id: u64) -> ProgramResult {
+    // Handle equipping logic
+    Ok(())
+}
+
+// Function to unequip item from base character NFT
+fn unequip_item(user_pubkey: &Pubkey, item_id: u64) -> ProgramResult {
+    // Handle unequipping logic
+    Ok(())
+}
+
+// Placeholder functions for external calls
+fn get_chainlink_vrf() -> u64 {
+    // Call Chainlink VRF
+    42 // Mock value for demonstration
+}
+
+fn lookup_rarity(random_number: u64) -> SelectedCosmetic {
+    // Use random number to select based on rarity distribution
+    SelectedCosmetic { id: 1, name: "Rare Hat" }
+}
